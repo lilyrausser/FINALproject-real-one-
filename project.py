@@ -51,6 +51,11 @@ class ColorBox(pygame.sprite.Sprite):
             self.rect.x = 215
             self.rect.y = 335
         
+
+    #def clicked(self):
+
+
+
     def set_color(self, color):
         if color == RED:
             self.images["Bright"] = pygame.image.load("assets/images/red_bright.png")
@@ -160,18 +165,17 @@ class Game():
             
 
 
-    def clear_selection(self):
-        self.red_box.set_selected(False)
-        self.yellow_box.set_selected(False)
-        self.blue_box.set_selected(False)
-        self.green_box.set_selected(False)
-
-
     def update(self):
         """Updates the game"""
         self.clock.tick(FPS)
-        self.display_color_list()
+
+        if self.phase == DISPLAY:
+            self.display_color_list()
+        elif self.phase == PLAY:
+            game()
+
         # does all of the inputs and understands them
+        
         self.handle_input()
         self.sprites.update()
         self.sprites.draw(self.screen)
@@ -185,6 +189,45 @@ class Game():
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     self.running = False
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                pos = pygame.mouse.get_pos()
+
+                for sprite in self.sprites:
+                    if sprite.rect.collidepoint(pos):
+                        list.append(sprite.color)
+    
+    maxfails = False
+    fails = 0
+
+
+    #storing data 
+    #input(color)
+    #with open("color_string.data.json", "w", encoding="utf-8") as outfile: 
+    #json.dump(color_string_results, outfile, ensure_ascii=False, indent=2)
+
+#with open("color_string_data.json") as infile: 
+    #data = json.load(infile)
+
+    #print(data)
+
+
+    def score(self): 
+        if maxfails = True:
+            break #you lost interface
+        else:
+            game()
+
+
+
+
+
+
+
+
+
+
+
+        
     
 def main():
     game = Game()
