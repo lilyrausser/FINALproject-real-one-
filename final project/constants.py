@@ -8,16 +8,21 @@ BLUE = 2
 GREEN = 3
 
 
-#Phases
-PLAY = "play" #play game
+# Phases
+START = "start"
+PLAY = "play"
 RULES = "rules"
 DISPLAY = "display"
 FAILED = "failed"
 QUIT = "quit"
-START = "start" #start whole game
 
-#Buttons
-PLAY_BUTTON = "play button"
+# Difficulty
+EASY = "easy"
+HARD = "hard"
+
+# Buttons
+EASY_BUTTON = "easy button"
+HARD_BUTTON = "hard button"
 BACK_BUTTON = "back button"
 QUIT_BUTTON = "quit button"
 REPLAY_BUTTON = "replay button"

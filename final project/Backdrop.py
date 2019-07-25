@@ -2,7 +2,7 @@ import pygame
 import random 
 import time
 import pygame.freetype
-from constants import RED, YELLOW, BLUE, GREEN, FPS, WIDTH, HEIGHT, DISPLAY, PLAY, FAILED, START, PLAY_BUTTON, BACK_BUTTON, QUIT_BUTTON, REPLAY_BUTTON, RULES_BUTTON
+from constants import *
 
 class Backdrop(pygame.sprite.Sprite):
     """The backdrop image for the game"""
